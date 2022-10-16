@@ -1,0 +1,80 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/users/favorites": {
+      "get": {
+        "summary": "Retrieves all favorites",
+        "tags": [
+          "Favorites"
+        ],
+        "responses": {
+          "200": {
+            "description": "name found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a favorite",
+        "tags": [
+          "Favorites"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "201": {
+            "description": "favorite created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "article_id": {
+                    "type": "number"
+                  },
+                  "user_id": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "article_id",
+                  "user_id"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{defaultHost}",
+      "variables": {
+        "defaultHost": {
+          "default": "localhost:3000"
+        }
+      }
+    }
+  ]
+}
