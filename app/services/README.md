@@ -22,35 +22,24 @@ Separate services for each logical piece of behavior:
 app/
   services/
     create_investment/
-      action.rb
-      actions/
-        create_buy_investment.rb
-        create_sell_investment.rb
-      entry_point.rb
+      create_buy_investment.rb
+      create_sell_investment.rb
     handle_investment_callback/
-      action.rb
-      entry_point.rb
     price_investment/
-      action.rb
-      entry_point.rb
 ```
 
 ### Not good
 
-A single "god" unit which implements many behaviours:
+A single "god" unit which implements many behaviors:
 
 ```
 app/
   services/
     manage_investment/
-      action.rb
-      entry_point.rb
-      actions/
-        create_buy_investment.rb
-        delete_buy_investment.rb
-        create_sell_investment.rb
-        delete_sell_investment.rb
-        record_investment_priced.rb
-        handle_investment_callback.rb
+      create_buy_investment.rb
+      delete_buy_investment.rb
+      create_sell_investment.rb
+      delete_sell_investment.rb
+      record_investment_priced.rb
+      handle_investment_callback.rb
 ```
-

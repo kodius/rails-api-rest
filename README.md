@@ -1,21 +1,15 @@
-# rails-api-template
+# rails-api-rest
 
-## mvc
+## MVC
+TODO
 
-## services
+## Services
+[What are services and how to use them](/app/services/README.md)
 
-## openapi support
+## Validators
 
-### generate front-end typescript fetch client
+## OpenAPI
+[What is OpenAPI and how to use it](/openapi/README.md)
 
-```
-openapi-generator-cli generate  --enable-post-process-file -i openapi.json --skip-validate-spec --enable-post-process-file  -g typescript-fetch -o ./api
-```
-
-### generate an updated openapi.json (can be automatic)
-
-```
-rake rswag:specs:swaggerize
-```
-## misc
-
+## Misc
+TODO

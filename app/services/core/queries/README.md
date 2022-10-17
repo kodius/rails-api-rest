@@ -50,7 +50,7 @@ Queries are stored in two places in the codebase:
 
 Core queries are used cross-application for common search behaviours, like "give me all contributions for this employer". They're isolated from queries we need specifically for a single requirement, which live inside the service which needs them.
 
-app/services/create_contribution/queries/letter.rb:
+`app/services/create_contribution/queries/letter.rb:`
 
 ```ruby
 # frozen_string_literal: true
@@ -70,4 +70,4 @@ module CreateContribution
 end
 ```
 
-Extending Core::Queries::Letter like this means that the action of a given service can call its internal Queries::Letter directly, using default scopes, but also using scopes freshly written as needed for that specific service.
+Extending `Core::Queries::Letter` like this means that the service can call its internal `Queries::Letter` directly, using default scopes, but also using scopes freshly written as needed for that specific service.
