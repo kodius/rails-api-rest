@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+module Core
+  module Queries
+    class User < Query
+
+      set_model ::User
+
+      module Scopes
+        include Query::Scopes
+        include Concerns::ByEmail
+
+        def by_adviser(adviser)
+          where(adviser_id: adviser.id)
+        end
+
+        def by_adviser_token(token)
+          joins(adviser: :shortcut).where('shortcuts.token' => token)
+        end
+
+        def find_by_adviser_and_id!(adviser, id)
+          by_adviser(adviser).find_by!(id: id)
+        end
+      end
+
+    end
+  end
+end

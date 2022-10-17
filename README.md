@@ -1,18 +1,21 @@
 # rails-api-template
 
-## mvcs
+## mvc
 
-## controllers
+## services
 
-## openapi
+## openapi support
 
-```bash
+### generate front-end typescript fetch client
+
+```
 openapi-generator-cli generate  --enable-post-process-file -i openapi.json --skip-validate-spec --enable-post-process-file  -g typescript-fetch -o ./api
 ```
 
+### generate an updated openapi.json (can be automatic)
 
-To generate new openapi.json
-
-```bash
+```
 rake rswag:specs:swaggerize
 ```
+## misc
+
