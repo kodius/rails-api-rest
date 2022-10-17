@@ -1,24 +1,18 @@
-# README
+# rails-api-template
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## mvcs
 
-Things you may want to cover:
+## controllers
 
-* Ruby version
+## openapi
 
-* System dependencies
+```bash
+openapi-generator-cli generate  --enable-post-process-file -i openapi.json --skip-validate-spec --enable-post-process-file  -g typescript-fetch -o ./api
+```
 
-* Configuration
 
-* Database creation
+To generate new openapi.json
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+rake rswag:specs:swaggerize
+```
