@@ -1,9 +1,13 @@
 # OpenAPI
-OpenAPI is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services. What this means is it makes your Rails API exposed via a standard that's easy to use by other tools. Some of those are OpenAPI explorers (see [this example](https://authress.io/app/#/api?route=get-/v1/users/-userId-/resources)) and front-end client generators ([openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli))
+OpenAPI is a specification for machine-readable interface files for describing, producing, consuming, and visualizing RESTful web services. What this means is it makes your Rails API exposed via a standard that's easy to use by other tools. Some of those are OpenAPI explorers (see [this example](https://editor.swagger.io/)) and client generators ([openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli))
 
-## What does this mean for?
+[More on the spec](https://swagger.io/specification/).
 
-What it means is that we're expected to annotate our endpoints (paths, parameters, responses) when developing them. In our specific case, we're using `rswag` and `rspec`. This means that the annotations are done via integration tests.
+## What does this mean?
+
+What it means is we annotate our endpoints (paths, parameters, responses) during developing. In our specific case, we're using `rswag` and `rspec` to achieve this, via integration tests. This also means there's less need for hand-holding when integrating an API with its users (be it front-end or simply other backends), and naturally to much quicker prototyping!
+
+## How it works
 
 See [spec/integration/favorites_spec.rb](/spec/integration/favorites_spec.rb) for an example of what this looks like.
 
@@ -15,9 +19,9 @@ rake rswag:specs:swaggerize
 
 The end result is an API explorer available by default at [localhost:3000/api-docs](http://localhost:3000/api-docs) where the user can interact with the API, send requests and receive responses as well as generate front-end clients for their applications.
 
-### Generating a front-end client
+## Generating clients
 
-The great thing about openapi.json -- apart from making the developers more strict and consistent about the API they're building, is that they get a *typed* front-end client for free.
+The great thing about openapi.json -- apart from making the developers more strict and consistent about the API they're building, is that they get a *typed* client for free.
 
 There's many different generators in the wild, but the most popular one is `@openapitools/openapi-generator-cli`. 
 
@@ -31,4 +35,4 @@ and then we'd run the actual generator
 openapi-generator-cli generate  --enable-post-process-file -i http://localhost:3000/openapi.json --skip-validate-spec --enable-post-process-file  -g typescript-fetch -o ./api
 ```
 
-which will produce a folder with types and clients for interacting with our backend API.
+which will produce a folder with types and clients for interacting with our backend API. No more handwriting API clients or manually typing responses or request bodies!
