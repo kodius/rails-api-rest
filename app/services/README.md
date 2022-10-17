@@ -1,6 +1,6 @@
 # What is a service?
 
-Services are the main architectural pattern in use in the Smart Pension rails application. 
+Services are the main architectural pattern in use in our Rails-based API projects. 
 
 Services help segregate the application to isolate changes required for individual features into small, testable fragments of code.
 
