@@ -9,6 +9,8 @@ module Users
       end
 
       def call
+        # would usually be logic for returning objects from the database, e.g.
+        # Core::Queries::User.all
         [1, 2, 3, 4, 5]
       end
 
