@@ -5,11 +5,21 @@ module Api
     class FavoritesController < ApplicationController
 
       def index
-        render json: { favorites: [1, 2, 3, 4] }
+        render json: favorites_list
       end
 
       def create
-        render json: { favorite: { article_id: request.params[:article_id], user_id: request.params[:user_id] } }
+        render ::Users::Favorites::Add.call(favorites_params)
+      end
+
+      private
+
+      def favorites_list
+        ::Users::Favorites::List.call
+      end
+
+      def favorites_params
+        params.require(:favorite).permit(:article_id, :user_id)
       end
 
     end

@@ -50,10 +50,10 @@
                 "type": "object",
                 "properties": {
                   "article_id": {
-                    "type": "number"
+                    "type": "string"
                   },
                   "user_id": {
-                    "type": "number"
+                    "type": "string"
                   }
                 },
                 "required": [

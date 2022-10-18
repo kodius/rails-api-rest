@@ -20,10 +20,10 @@ describe 'Favorites API' do
       parameter name: :favorite, in: :body, schema: {
         type: :object,
         properties: {
-          article_id: { type: :number },
-          user_id: { type: :number }
+          article_id: { type: :string },
+          user_id: { type: :string }
         },
-        required: %w[article_id user_id]
+        required: [ 'article_id', 'user_id' ]
       }
 
       response '201', 'favorite created' do
