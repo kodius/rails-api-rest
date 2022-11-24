@@ -1,0 +1,23 @@
+{
+  "solargraph.transport": "stdio",
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
+  "ruby.format": "rubocop",
+  "editor.formatOnSave": true,
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    },
+    "reek": {
+      "useBundler": true
+    }
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+  },
+  "[gemfile]": {
+    "editor.defaultFormatter": "castwide.solargraph"
+  }
+}
