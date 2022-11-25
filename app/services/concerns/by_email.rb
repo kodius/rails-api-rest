@@ -3,7 +3,7 @@
 module Concerns
   module ByEmail
     def by_email(email)
-      where(email: email)
+      where(email:)
     end
   end
 end

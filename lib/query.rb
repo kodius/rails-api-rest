@@ -23,7 +23,7 @@ class Query
     end
 
     module MetaMethods
-      def method_missing(method_name, *args, &block)
+      def method_missing(method_name, *args, &)
         if extended_relation.respond_to?(method_name)
           extended_relation.public_send(method_name, *args)
         else
@@ -74,11 +74,11 @@ class Query
     end
 
     def not_id(id)
-      where.not(id: id)
+      where.not(id:)
     end
 
     def by_id(id)
-      where(id: id)
+      where(id:)
     end
 
     def multiple_or(where_clauses)

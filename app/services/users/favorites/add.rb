@@ -28,8 +28,8 @@ module Users
       end
 
       # def db_validation_errors
-        # validate with model definition
-        # @db_entry ||= ::Validations::ModelValidations.call(entry)
+      # validate with model definition
+      # @db_entry ||= ::Validations::ModelValidations.call(entry)
       # end
 
     end
