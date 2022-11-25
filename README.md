@@ -16,13 +16,27 @@ The other parts of MVC, the Model and Controller -- they're both meant to be ski
 
 ## Validators
 
-## OpenAPI
+## OpenAPI 🌐
 [What is OpenAPI and how to use it](/openapi/README.md)
 
-## Coding Standards
+## Coding Standards 👔
 We like Ruby for its elegance and almost natural-like syntax and expresiveness.
 https://github.com/rubocop/rails-style-guide
 
+## Extensions
+
+https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby
+
+https://marketplace.visualstudio.com/items?itemName=castwide.solargraph
+
+https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop
+
+https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby
+
+https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise
+
+https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
 
 ## Misc
+
 TODO
