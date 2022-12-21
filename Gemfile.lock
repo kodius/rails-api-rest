@@ -99,8 +99,6 @@ GEM
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
     erubi (1.11.0)
-    fast_jsonapi (1.5)
-      activesupport (>= 4.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -111,6 +109,8 @@ GEM
     json (2.6.2)
     json-schema (2.8.1)
       addressable (>= 2.4)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     jwt (2.5.0)
     kwalify (0.7.2)
     loofah (2.19.0)
@@ -261,7 +261,7 @@ DEPENDENCIES
   debug
   devise
   devise-jwt
-  fast_jsonapi
+  jsonapi-serializer
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
