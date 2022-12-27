@@ -55,6 +55,16 @@ https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise
 
 https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
 
+https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
+
+## Debugging with VS Code
+
+- Install [VSCode rdbg](https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg)
+
+- Hit F5, type in `bin/rails s`
+
+- Enjoy inline VSCode debugging w/ Rails
+
 ## Misc
 
 TODO
