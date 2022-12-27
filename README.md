@@ -61,9 +61,7 @@ https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 
 - Install [VSCode rdbg](https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg)
 
-- Hit F5, type in `bin/rails s`
-
-- Enjoy inline VSCode debugging w/ Rails
+- Run the `Debug Rails` task
 
 ## Misc
 
