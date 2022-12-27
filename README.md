@@ -34,12 +34,14 @@ Implemented with [jsonapi-serializer](https://github.com/jsonapi-serializer/json
 
 [What is OpenAPI and how to use it](/openapi/README.md)
 
+We're using [rswag](https://github.com/rswag/rswag). The explorer sits over at `/api-docs/`.
+
 ## Coding Standards 👔
 
 We like Ruby for its elegance and almost natural-like syntax and expresiveness.
 https://github.com/rubocop/rails-style-guide
 
-## Extensions
+## Recommended extensions
 
 https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby
 
