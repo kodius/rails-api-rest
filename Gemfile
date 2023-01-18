@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -42,7 +42,9 @@ gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt'
 
+# Serializer & Openapi
 gem 'jsonapi-serializer'
+gem 'rswag'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -53,8 +55,6 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
 end
-
-gem 'rswag'
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]

@@ -4,10 +4,11 @@ module Api
   module Users
     class FavoritesController < ApplicationController
 
-      before_action :authenticate_user!
+      # before_action :authenticate_user!
 
       def index
-        render json: favorites_list
+        favorites = favorites_list
+        render json: favorites
       end
 
       def create
