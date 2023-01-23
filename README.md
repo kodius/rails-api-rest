@@ -63,6 +63,21 @@ https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 
 - Run the `Debug Rails` task
 
+## How to run
+
+```
+rbenv install 3.2.0 #to get the latest version of ruby
+
+gem install bundler # to get bundler installed
+
+bundle # install dependencies
+
+rails db:create # create database
+rails db:migrate # run migrations
+
+bin/rails server # run server
+```
+
 ## Misc
 
 TODO
