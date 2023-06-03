@@ -65,7 +65,7 @@ https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 
 - Enjoy inline VS Code debugging with breakpoints and everything
 
-[VS Code with rdbg](https://kodiusebucket.s3.amazonaws.com/vscode-rdbg.png)
+![VS Code with rdbg](https://kodiusebucket.s3.amazonaws.com/vscode-rdbg.png)
 
 ## How to run
 
