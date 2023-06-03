@@ -1,7 +1,4 @@
 {
-  "solargraph.transport": "stdio",
-  "solargraph.formatting": true,
-  "solargraph.diagnostics": true,
   "ruby.format": "rubocop",
   "editor.formatOnSave": true,
   "ruby.useBundler": true,
@@ -18,6 +15,6 @@
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[gemfile]": {
-    "editor.defaultFormatter": "castwide.solargraph"
+    // "editor.defaultFormatter": "castwide.solargraph"
   }
 }

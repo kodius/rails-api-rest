@@ -63,6 +63,10 @@ https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 
 - Run the `Debug Rails` task
 
+- Enjoy inline VS Code debugging with breakpoints and everything
+
+[VS Code with rdbg](https://kodiusebucket.s3.amazonaws.com/vscode-rdbg.png)
+
 ## How to run
 
 ```
