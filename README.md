@@ -66,7 +66,7 @@ https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 ## How to run
 
 ```
-rbenv install 3.2.0 #to get the latest version of ruby
+rbenv install 3.2.2 #to get the latest version of ruby
 
 gem install bundler # to get bundler installed
 
@@ -91,3 +91,7 @@ Unit testing (needs to be in unit folder)
 ```
 RAILS_ENV=test rspec spec/unit
 ```
+
+## Miscellaneous
+
+Any other additions are welcome!
