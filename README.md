@@ -78,6 +78,16 @@ rails db:migrate # run migrations
 bin/rails server # run server
 ```
 
-## Misc
+## Testing
 
-TODO
+Integration testing
+
+```
+RAILS_ENV=test rails rswag
+```
+
+Unit testing (needs to be in unit folder)
+
+```
+RAILS_ENV=test rspec spec/unit
+```
