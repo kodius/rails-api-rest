@@ -62,3 +62,4 @@ group :development do
 end
 
 gem 'rbs_rails', require: false
+gem 'steep'
