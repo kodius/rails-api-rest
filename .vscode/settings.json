@@ -1,20 +1,7 @@
 {
-  "ruby.format": "rubocop",
   "editor.formatOnSave": true,
-  "ruby.useBundler": true,
-  "ruby.useLanguageServer": true,
-  "ruby.lint": {
-    "rubocop": {
-      "useBundler": true
-    },
-    "reek": {
-      "useBundler": true
-    }
-  },
+  "rubyLsp.rubyVersionManager": "rbenv",
   "[ruby]": {
-    "editor.defaultFormatter": "misogi.ruby-rubocop"
-  },
-  "[gemfile]": {
-    // "editor.defaultFormatter": "castwide.solargraph"
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
   }
 }
