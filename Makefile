@@ -6,3 +6,5 @@ test\:unit:
 	RAILS_ENV=test rspec spec/unit
 migrate:
 	RAILS_ENV=development bin/rails db:migrate
+openapi:
+	bundle exec rake rswag:specs:swaggerize
