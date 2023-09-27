@@ -3,8 +3,8 @@ dev:
 test\:swag:
 	RAILS_ENV=test rails rswag
 test\:unit:
-	RAILS_ENV=test rspec spec/unit
+	RAILS_ENV=test rspec spec/services
 migrate:
 	RAILS_ENV=development bin/rails db:migrate
-openapi:
-	bundle exec rake rswag:specs:swaggerize
+swagger:
+	RAILS_ENV=development bundle exec rake rswag:specs:swaggerize
