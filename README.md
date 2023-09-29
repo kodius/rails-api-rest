@@ -26,15 +26,11 @@ Authorization is imeplemented using Devise and set to act like a typical API wit
 
 Implemented with [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer), a fork of Netflix's now deprecated and unmaintained [fast_jsonapi](https://github.com/Netflix/fast_jsonapi). See the first link for more details on its usage.
 
-## Validators
-
-- todo
-
 ## OpenAPI 🌐
 
 [What is OpenAPI and how to use it](/openapi/README.md)
 
-We're using [rswag](https://github.com/rswag/rswag). The explorer sits over at `/api-docs/`.
+We're using [rswag](https://github.com/rswag/rswag). The explorer sits over at `/spec`.
 
 ## Coding Standards 👔
 
@@ -71,29 +67,22 @@ https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 
 ```
 rbenv install 3.2.2 #to get the latest version of ruby
-
 gem install bundler # to get bundler installed
-
 bundle # install dependencies
-
 rails db:create # create database
-rails db:migrate # run migrations
-
-bin/rails server # run server
+make migrate
+make dev
 ```
 
-## Testing
-
-Integration testing
+## Run scripts
 
 ```
-RAILS_ENV=test rails rswag
-```
-
-Unit testing (needs to be in unit folder)
-
-```
-RAILS_ENV=test rspec spec/unit
+make dev
+make test #all tests
+make test:swag
+make test:unit #services
+make migrate
+make swagger
 ```
 
 ## Miscellaneous

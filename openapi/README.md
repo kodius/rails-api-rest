@@ -17,7 +17,7 @@ After finishing writing a half-decent annotation and test for a controller, we r
 rake rswag:specs:swaggerize
 ```
 
-The end result is an API explorer available by default at [localhost:3000/api-docs](http://localhost:3000/api-docs) where the user can interact with the API, send requests and receive responses as well as generate front-end clients for their applications.
+The end result is an API explorer available by default at [127.0.0.1:3000/spec](http://127.0.0.1:3000/spec) where the user can interact with the API, send requests and receive responses as well as generate front-end clients for their applications.
 
 ## Generating clients
 
@@ -32,7 +32,7 @@ Its documentation can tell you more about the whole process, but to generate a T
 and then we'd run the actual generator
 
 ```
-openapi-generator-cli generate  --enable-post-process-file -i http://localhost:3000/openapi.json --skip-validate-spec --enable-post-process-file  -g typescript-fetch -o ./api
+openapi-generator-cli generate  --enable-post-process-file -i http://127.0.0.1:3000/openapi.json --skip-validate-spec --enable-post-process-file  -g typescript-fetch -o ./api
 ```
 
 which will produce a folder with types and clients for interacting with our backend API. No more handwriting API clients or manually typing responses or request bodies!

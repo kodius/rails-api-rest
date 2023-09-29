@@ -11,8 +11,8 @@ Rails.application.routes.draw do
                        sessions: 'users/sessions',
                        registrations: 'users/registrations'
                      }
-  mount Rswag::Ui::Engine => '/api-docs'
-  mount Rswag::Api::Engine => '/api-docs'
+  mount Rswag::Ui::Engine => '/spec'
+  mount Rswag::Api::Engine => '/spec'
   namespace :api, format: :json do
     namespace :users do
       resources :favorites, only: %w[create index]
