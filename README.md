@@ -22,11 +22,15 @@ Authorization is imeplemented using Devise and set to act like a typical API wit
 
 Implemented with [blueprinter](https://github.com/procore-oss/blueprinter). Click the link for more info.
 
+## Validations
+
+Default validations are sitting in `app/services/validations`.
+
 ## OpenAPI 🌐
 
 [What is OpenAPI and how to use it](/openapi/README.md)
 
-We're using [rswag](https://github.com/rswag/rswag). The explorer sits over at `/spec`.
+We're using [rswag](https://github.com/rswag/rswag). The explorer sits over at `/spec`. You write a spec for your controller, along with typed payloads and responses, and then you run `make swagger` to have the latest and greatest API spec available over at `/spec/openapi.json` or via the explorer page on `/spec`!
 
 ## Coding Standards 👔
 

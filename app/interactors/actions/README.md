@@ -10,6 +10,10 @@ Not having a massive "core" of controllers, models and views with all the logic 
 
 It allows us to unit test far more of our codebase than we would be able to do within the Rails framework -- moving the logic out into POROs (Plain Old Ruby Objects) helps us keep our test suite fast and comprehensive.
 
+## How is this different than a Service?
+
+We still use Service objects, they're setting in the usual places over at `app/services`, except we use them only for logic that's not supposed to be known to users. They're not part of the business domain but rather technicalities.
+
 ## When should I create a new Action Interactor?
 
 Always default to creating a new Action when adding functionality.
