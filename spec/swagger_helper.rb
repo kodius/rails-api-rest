@@ -31,7 +31,53 @@ RSpec.configure do |config|
             }
           }
         }
-      ]
+      ],
+      components: {
+        schemas: {
+          SessionsSignUpPayload: {
+            type: :object,
+            required: %w[email password password_confirmation],
+            properties: {
+              email: {
+                type: :string
+              },
+              password: {
+                type: :string
+              },
+              password_confirmation: {
+                type: :string
+              }
+            }
+          },
+          SessionsLoginPayload: {
+            type: :object,
+            required: %w[email password],
+            properties: {
+              email: {
+                type: :string
+              },
+              password: {
+                type: :string
+              }
+            }
+          },
+          SessionsLoginResponse: {
+            type: :object,
+            required: %w[id email auth_token],
+            properties: {
+              id: {
+                type: :integer
+              },
+              email: {
+                type: :string
+              },
+              auth_token: {
+                type: :string
+              }
+            }
+          }
+        }
+      }
     }
   }
 

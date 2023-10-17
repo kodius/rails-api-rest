@@ -5,40 +5,21 @@
     "version": "v1"
   },
   "paths": {
-    "/api/users/favorites": {
-      "get": {
-        "summary": "Retrieves all favorites",
+    "/api/sessions/sign-up": {
+      "post": {
+        "summary": "create registration",
         "tags": [
-          "Favorites"
+          "Sessions"
+        ],
+        "parameters": [
+
         ],
         "responses": {
           "200": {
-            "description": "name found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "summary": "Creates a favorite",
-        "tags": [
-          "Favorites"
-        ],
-        "parameters": [],
-        "responses": {
-          "201": {
-            "description": "favorite created"
+            "description": "successful"
           },
           "422": {
-            "description": "invalid request"
+            "description": "Unprocessable Entity"
           }
         },
         "requestBody": {
@@ -46,18 +27,58 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "properties": {
-                  "article_id": {
-                    "type": "string"
+                "$ref": "#/components/schemas/SessionsSignUpPayload"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/login": {
+      "post": {
+        "summary": "create session",
+        "tags": [
+          "Sessions"
+        ],
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsLoginResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
                   },
-                  "user_id": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "article_id",
-                  "user_id"
-                ]
+                  "required": [
+                    "error"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/SessionsLoginPayload"
               }
             }
           }
@@ -74,5 +95,62 @@
         }
       }
     }
-  ]
+  ],
+  "components": {
+    "schemas": {
+      "SessionsSignUpPayload": {
+        "type": "object",
+        "required": [
+          "email",
+          "password",
+          "password_confirmation"
+        ],
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "password_confirmation": {
+            "type": "string"
+          }
+        }
+      },
+      "SessionsLoginPayload": {
+        "type": "object",
+        "required": [
+          "email",
+          "password"
+        ],
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "SessionsLoginResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "email",
+          "auth_token"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "auth_token": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }

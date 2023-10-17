@@ -8,15 +8,11 @@ This is a core rails API starter project accompanied with examples of a couple o
 
 The project is meant as a backend-only rails API, and as such the "view" in MVC in this case means having JSON responses, not actual templates. Or rather, any front-end framework handling the viewing whichever way you like.
 
-The other parts of MVC, the Model and Controller -- they're both meant to be skinny., which is why we're making extensive use of Services, Queries (sometimes called Repositories) and Validators, to make them clean and make them contain as little as possible.
+The other parts of MVC, the Model and Controller -- they're both meant to be skinny., which is why we're making extensive use of Actions and Validators, to make them clean and make them contain as little as possible.
 
-## Services 👨‍🔧
+## ACtions 👨‍🔧
 
 [What are services and how to use them](/app/services/README.md)
-
-## Queries
-
-[What are Query objects and how they're used](/app/services/core/queries/README.md)
 
 ## Authorization
 
