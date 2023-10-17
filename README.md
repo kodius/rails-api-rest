@@ -10,9 +10,9 @@ The project is meant as a backend-only rails API, and as such the "view" in MVC 
 
 The other parts of MVC, the Model and Controller -- they're both meant to be skinny., which is why we're making extensive use of Actions and Validators, to make them clean and make them contain as little as possible.
 
-## ACtions 👨‍🔧
+## Actions 👨‍🔧
 
-[What are services and how to use them](/app/services/README.md)
+[What are Actions and how to use them](/app/interactors/actions/README.md)
 
 ## Authorization
 
@@ -20,7 +20,7 @@ Authorization is imeplemented using Devise and set to act like a typical API wit
 
 ## Serializers
 
-Implemented with [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer), a fork of Netflix's now deprecated and unmaintained [fast_jsonapi](https://github.com/Netflix/fast_jsonapi). See the first link for more details on its usage.
+Implemented with [blueprinter](https://github.com/procore-oss/blueprinter). Click the link for more info.
 
 ## OpenAPI 🌐
 
@@ -35,17 +35,11 @@ https://github.com/rubocop/rails-style-guide
 
 ## Recommended extensions
 
-https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby
-
-https://marketplace.visualstudio.com/items?itemName=castwide.solargraph
+https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp
 
 https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop
 
-https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby
-
 https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise
-
-https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
 
 https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg
 
