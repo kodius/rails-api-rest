@@ -9,7 +9,6 @@ module Authorization
 
     def call
       return user_authentication_error unless authenticate_user
-      return user_suspended_error unless user.active?
 
       update_valid_jwt_token_uuid
 
