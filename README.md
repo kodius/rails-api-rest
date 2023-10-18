@@ -1,5 +1,7 @@
 # rails-api-rest 📦
 
+![rorimage](https://user-images.githubusercontent.com/8150171/276251204-0e599658-2476-4573-ae96-b68df82fd528.jpg)
+
 ## What is this? ❓
 
 This is a core **rails API starter project** accompanied with examples of a couple of concepts we like to use in our Rails projects. It's meant to be used as a template (meaning when you start a new repository on **Github**, you select this repository as the "template" to use). With it you get a barebones rails api setup (initialized with the `--api` flag during generation), using **postgres** for DB and a couple of gems we like to use plus samples of **Actions**, **Validations**, **OpenAPI** definitions and such, to make it easier when starting a new project from scratch instead of having to think what to do.
