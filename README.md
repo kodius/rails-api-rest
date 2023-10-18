@@ -10,6 +10,7 @@ This is a core **rails API starter project** accompanied with examples of a coup
 *   [x] 🗂️ **Serialization**
 *   [x] 🛡️ **Validations**
 *   [x] 📝 **OpenAPI**
+*   [x] 📦 **Dockerized**
 
 
 
