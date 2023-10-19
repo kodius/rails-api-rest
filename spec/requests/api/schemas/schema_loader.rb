@@ -8,7 +8,7 @@ module SpecSchemas
     end
 
     def load
-      JSON.parse(@filename)
+      JSON.parse(File.read(@filename))
     end
 
   end

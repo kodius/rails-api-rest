@@ -7,10 +7,15 @@ require 'json_schemer'
 Dir['./spec/requests/api/schemas/*.rb'].each { |file| require file }
 
 # Load schema files from JSON
-def load_schemas
+def json_schemas
+  schemas = {}
   Dir['./spec/requests/api/schemas/json/*.json'].each do |json|
-    SpecSchemas::SpecLoader.new(json).load
+    file_name = File.basename(json, '.json')
+    humanized = file_name.split('_').map(&:capitalize).join
+    schemas[humanized] = SpecSchemas::SpecLoader.new(json).load
   end
+
+  schemas
 end
 
 RSpec.configure do |config|
@@ -44,14 +49,12 @@ RSpec.configure do |config|
         }
       ],
       components: {
-        schemas: load_schemas
+        schemas: {}
       }
     }
   }
 
-  puts config.swagger_docs['v1/openapi.json'].components
-
-  # config.swagger_docs['v1/openapi.json'].components.schemas << load_schemas
+  config.swagger_docs['v1/openapi.json'][:components][:schemas].merge!(json_schemas)
 
   # Specify the format of the output Swagger file when running 'rswag:specs:swaggerize'.
   # The swagger_docs configuration option has the filename including format in
