@@ -1,6 +1,17 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'json_schemer'
+
+# Require schema files
+Dir['./spec/requests/api/schemas/*.rb'].each { |file| require file }
+
+# Load schema files from JSON
+def load_schemas
+  Dir['./spec/requests/api/schemas/json/*.json'].each do |json|
+    SpecSchemas::SpecLoader.new(json).load
+  end
+end
 
 RSpec.configure do |config|
   # Specify a root folder where Swagger JSON files are generated
@@ -33,53 +44,14 @@ RSpec.configure do |config|
         }
       ],
       components: {
-        schemas: {
-          SessionsSignUpPayload: {
-            type: :object,
-            required: %w[email password password_confirmation],
-            properties: {
-              email: {
-                type: :string
-              },
-              password: {
-                type: :string
-              },
-              password_confirmation: {
-                type: :string
-              }
-            }
-          },
-          SessionsLoginPayload: {
-            type: :object,
-            required: %w[email password],
-            properties: {
-              email: {
-                type: :string
-              },
-              password: {
-                type: :string
-              }
-            }
-          },
-          SessionsLoginResponse: {
-            type: :object,
-            required: %w[id email auth_token],
-            properties: {
-              id: {
-                type: :integer
-              },
-              email: {
-                type: :string
-              },
-              auth_token: {
-                type: :string
-              }
-            }
-          }
-        }
+        schemas: load_schemas
       }
     }
   }
+
+  puts config.swagger_docs['v1/openapi.json'].components
+
+  # config.swagger_docs['v1/openapi.json'].components.schemas << load_schemas
 
   # Specify the format of the output Swagger file when running 'rswag:specs:swaggerize'.
   # The swagger_docs configuration option has the filename including format in

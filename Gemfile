@@ -8,6 +8,7 @@ ruby '3.2.2'
 gem 'bcrypt'
 gem 'blueprinter'
 gem 'bootsnap', require: false
+gem 'json_schemer'
 gem 'jwt'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'

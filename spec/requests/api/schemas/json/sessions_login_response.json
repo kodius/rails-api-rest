@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "email",
+    "auth_token"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string"
+    },
+    "auth_token": {
+      "type": "string"
+    }
+  }
+}
