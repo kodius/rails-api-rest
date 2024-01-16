@@ -1,0 +1,8 @@
+image:
+  repository: registry.kodius.com/app_name
+  tag: 0.1.0
+app:
+  name: app_name
+  url: app_url
+namespace: namespace
+env: dev

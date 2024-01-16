@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.app.name }}
+  name: {{ .Values.app.name }}-deployment
+  namespace: {{ .Values.namespace }}
+spec:
+  # How many replicasets to keep around after a deploy
+  replicas: 4
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }}
+    spec:
+      containers:
+      - name: {{ .Values.app.name }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        env:
+          - name: DB_HOST
+            value: "postgres-0.postgres"
+          - name: DB_USERNAME
+            value: "postgres"
+          - name: RAILS_ENV
+            value: "production"
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: db-name-secret
+                key: db_name 
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secret
+                key: password 
+          - name: SECRET_KEY_BASE
+            valueFrom:
+              secretKeyRef:
+                name: secret-key-base-secret
+                key: secret_key_base
+        ports:
+        - containerPort: 3000
+
+        readinessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: /healthcheck
+            httpHeaders:
+            - name: Host
+              value: localhost
+            port: 3000
+
+        livenessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 10
+
+      imagePullSecrets:
+      - name: regcred
